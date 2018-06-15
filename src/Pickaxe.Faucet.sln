@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pickaxe.Faucet.ConsoleApp", "Pickaxe.Faucet.ConsoleApp\Pickaxe.Faucet.ConsoleApp.csproj", "{FC47524C-E049-43E3-A372-B4BDE2C816D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pickaxe.Faucet.Api", "Pickaxe.Faucet.Api\Pickaxe.Faucet.Api.csproj", "{F6807601-15A0-4467-B498-245E65FA2B99}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC47524C-E049-43E3-A372-B4BDE2C816D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC47524C-E049-43E3-A372-B4BDE2C816D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC47524C-E049-43E3-A372-B4BDE2C816D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC47524C-E049-43E3-A372-B4BDE2C816D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6807601-15A0-4467-B498-245E65FA2B99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6807601-15A0-4467-B498-245E65FA2B99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6807601-15A0-4467-B498-245E65FA2B99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6807601-15A0-4467-B498-245E65FA2B99}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B40291E7-8926-4291-A858-0CC387AB6408}
+	EndGlobalSection
+EndGlobal

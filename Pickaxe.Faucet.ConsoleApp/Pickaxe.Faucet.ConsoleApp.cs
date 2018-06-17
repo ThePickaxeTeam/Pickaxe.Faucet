@@ -27,14 +27,12 @@ namespace Pickaxe.Faucet.ConsoleApp
             int value = 1;
             while (true)
             {
-            Console.Write("\n\nEnter desired amount of coins [1-100]: ");
-            value = int.Parse(Console.ReadLine());
-                {
-                    if (value > 0 && value <= 100)
-                        break;
-                    else
-                        Console.WriteLine("\nError. Try again!!!");
-                }
+                Console.Write("\n\nEnter desired amount of coins [1-100]: ");
+                value = int.Parse(Console.ReadLine());
+                if (value > 0 && value <= 100)
+                    break;
+                else
+                    Console.WriteLine("\nError. Try again!!!");
             }
 
             var transLog = new Dictionary<string, int>();

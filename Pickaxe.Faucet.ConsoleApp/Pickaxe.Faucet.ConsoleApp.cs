@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using Org.BouncyCastle.Math;
 using Org.BouncyCastle.Math.EC;
 using Org.BouncyCastle.Crypto.Digests;
@@ -19,14 +20,43 @@ namespace Pickaxe.Faucet.ConsoleApp
 
         static void Main(string[] args)
         {
+
             Console.WriteLine("\n   ___PICKAXE BLOCKCHAIN FAUCET___\n");
             Console.Write("Enter your PickAxe blockchain address: ");
             var recipientAddress = Console.ReadLine();
-            Console.Write("\n\nEnter desired amount of coins: ");
-            var value = int.Parse(Console.ReadLine());
-            Console.WriteLine();
-            
-            CreateAndSignFaucetTransaction(recipientAddress, value);
+            int value = 1;
+            while (true)
+            {
+            Console.Write("\n\nEnter desired amount of coins [1-100]: ");
+            value = int.Parse(Console.ReadLine());
+                {
+                    if (value > 0 && value <= 100)
+                        break;
+                    else
+                        Console.WriteLine("\nError. Try again!!!");
+                }
+            }
+
+            var transLog = new Dictionary<string, int>();
+            if (transLog.Keys.Contains(recipientAddress))
+            {
+                if (transLog[recipientAddress] + value <= 100)
+                {
+                    CreateAndSignFaucetTransaction(recipientAddress, value);
+                    transLog[recipientAddress] += value;
+                }
+                else
+                {
+                    Console.WriteLine($"Your maximum amount to request is: {100 - transLog[recipientAddress]}");
+                    Console.WriteLine("Transaction cancelled!");
+                }
+            }
+            else
+            {
+                CreateAndSignFaucetTransaction(recipientAddress, value);
+                transLog.Add(recipientAddress, value);
+            }
+
         }
 
         public static string BytesToHex(byte[] bytes)
@@ -99,7 +129,7 @@ namespace Pickaxe.Faucet.ConsoleApp
         public static void CreateAndSignFaucetTransaction(string recipientAddress, int value)
         {
             Console.WriteLine("--------------------------------");
-            Console.WriteLine("CREATE A TRANSACTION FROM FAUCET");
+            Console.WriteLine("CREATING TRANSACTION FROM FAUCET");
             Console.WriteLine("--------------------------------\n");
 
             string dateTime = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:sssZ");
@@ -143,6 +173,11 @@ namespace Pickaxe.Faucet.ConsoleApp
                 string signedTranJson = JsonConvert.SerializeObject(tranSigned, Formatting.Indented);
                 Console.WriteLine("\nSigned transaction (JSON):");
                 Console.WriteLine(signedTranJson);
+
+                byte[] signedTranHash = CalcSHA256(signedTranJson);
+                Console.WriteLine("\nSigned Transaction hash: {0}\n", BytesToHex(signedTranHash));
+
+                File.WriteAllText(@"D:\SoftUni\!Blockchain Dev Course\Tem Project\signed trans json files\jsonfile.txt", signedTranJson);
             }
             else
             {

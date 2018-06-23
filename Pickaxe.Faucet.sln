@@ -13,8 +13,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pickaxe.Blockchain.Contract
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pickaxe.Blockchain.Clients", "..\Pickaxe.Blockchain\src\Pickaxe.Blockchain.Clients\Pickaxe.Blockchain.Clients.csproj", "{4C4B254A-09EE-4670-B91B-370854C14642}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestFaucet", "TestFaucet\TestFaucet.csproj", "{06458A45-6715-4C1B-A770-C3CE423AB464}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,10 +39,6 @@ Global
 		{4C4B254A-09EE-4670-B91B-370854C14642}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C4B254A-09EE-4670-B91B-370854C14642}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C4B254A-09EE-4670-B91B-370854C14642}.Release|Any CPU.Build.0 = Release|Any CPU
-		{06458A45-6715-4C1B-A770-C3CE423AB464}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{06458A45-6715-4C1B-A770-C3CE423AB464}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{06458A45-6715-4C1B-A770-C3CE423AB464}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{06458A45-6715-4C1B-A770-C3CE423AB464}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
